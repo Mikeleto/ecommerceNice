@@ -20,7 +20,7 @@
             @livewire('search')
         </div>
 
-        <div  dusk="boton" class="mx-6 relative hidden md:block">
+        <div  class="mx-6 relative hidden md:block" dusk="boton" >
             @auth
                 <x-jet-dropdown align="right"  width="48" >
                     <x-slot name="trigger">
@@ -54,7 +54,7 @@
                         <div class="border-t border-gray-100"></div>
 
                         <!-- Authentication -->
-                        <form method="POST" dusk="kill"  action="{{ route('logout') }}">
+                        <form dusk="kill"  method="POST"  action="{{ route('logout') }}">
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
@@ -72,7 +72,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-jet-dropdown-link dusk="abrir"  href="{{ route('login') }}">
+                        <x-jet-dropdown-link  dusk="abrir"  href="{{ route('login') }}">
                             {{ __('Login') }}
                         </x-jet-dropdown-link>
 
@@ -84,7 +84,7 @@
             @endauth
         </div>
 
-        <div dusk="patata"  class=" hidden md:block">
+        <div   class=" hidden md:block" dusk="patata">
             @livewire('dropdown-cart')
         </div>
     </div>
